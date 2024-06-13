@@ -2,8 +2,15 @@ language: python
 python:
   - "3.8"
 
-install:
-  - pip install -r requirements.txt
+# Installer Tkinter pour l'interface graphique
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install -y python3-tk
 
+# Commandes pour installer les dépendances et exécuter les tests
+install:
+  - pip install -r requirements.txt  # Si vous avez des dépendances
 script:
-  - pytest
+  - python test.py  # Remplacez par votre script de test
+
+
